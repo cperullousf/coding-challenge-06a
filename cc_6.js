@@ -29,3 +29,30 @@ const employee2 = new Employee("John Storf", "Sales");
 const manager1 = new Manager("Maxim Zakhariyev", "IT", 8);
 const manager2 = new Manager("Cole Perullo", "Finance", 5);
 
+// Step 5: Create Company class
+class Company {
+    constructor() {
+        this.employees = [];
+    }
+
+    addEmployee(employee) {
+        this.employees.push(employee);
+    }
+
+    listEmployees() {
+        this.employees.forEach(employee => {
+            console.log(employee.describe());
+        });
+    }
+}
+
+// Step 6: Instantiate Company and add employees and manger instances
+const company = new Company();
+
+company.addEmployee(employee1);
+company.addEmployee(employee2);
+company.addEmployee(manager1);
+company.addEmployee(manager2);
+
+// Display all employee information
+company.listEmployees();
